@@ -34,7 +34,7 @@ for file_location in args.paths:
 load = time.time()
 
 # print(f"Load time is {load-start}")
-fig, ax= plt.subplots()
+fig, ax = plt.subplots()
 for data in files_to_plot:
     # print(csv_file)
     if "CSV" in data.name:
@@ -45,7 +45,7 @@ for data in files_to_plot:
         )
     else:
         for i in range(1, files_to_plot[data].shape[1]):
-            if files_to_plot[data].shape[1] > 2:
+            if files_to_plot[data].shape[1] > 2 and ".dat" not in data.name:
                 label = files_to_plot[data].iloc[:, i].name
             else:
                 label = data
